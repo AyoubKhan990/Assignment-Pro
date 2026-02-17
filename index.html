@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssignmentPro - Title Page Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        body {
+          background-color: white !important;
+          margin: 0 !important;
+        }
+        #assignment-preview {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 210mm !important;
+          height: 297mm !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          border: none !important;
+          box-shadow: none !important;
+          transform: none !important;
+          display: block !important;
+        }
+      }
+
+      /* Base A4 proportions for the internal content */
+      .a4-document {
+        width: 800px;
+        height: 1131px; /* 800 * 1.414 */
+        background: white;
+        position: relative;
+        flex-shrink: 0;
+      }
+      
+      /* Responsive wrapper that scales the 800px document to fit its parent */
+      .preview-scaler {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        background: #f1f5f9; /* slate-100 */
+        border-radius: 0.75rem;
+        border: 1px solid #e2e8f0;
+      }
+
+      .ui-transition {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      #assignment-preview {
+        background: white !important;
+        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.1);
+      }
+      
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 min-h-screen">
+    <div id="root"></div>
+  </body>
+</html>
